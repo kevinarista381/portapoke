@@ -36,3 +36,168 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* POKEMON DETAIL*/
+
+.poketext{
+  color: #f7f5fa;
+  background: #629b9f;
+  font-size: 1.5vw;
+  min-width: 30%;
+  height: 30%;
+  margin-right: 25%;
+  margin-left: 25%;
+  padding-top: 1%;
+  padding-bottom: 4%;
+
+}
+
+.battleback{
+  
+  background-image: url(img/battleback.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-width: 100%;
+  min-height:100%;
+  margin-left: 25%;
+  padding: 15%;
+}
+
+.pokesprite{
+  margin-top: -23%;
+  margin-left: 33%;
+  margin-bottom: 2%;
+
+width:35%;
+height:35%;
+
+}
+
+.pokesprite img{
+ width: 55%;
+ height:55%;
+}
+
+/* MAIN MENU */
+.titleimg {
+  position: fixed;
+  background-repeat: repeat;
+  left: 0;
+  top: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  max-height: 100vh;
+  margin: auto;
+ }
+
+.mainlogo{
+  margin-top: 5%;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: contain;
+  margin-bottom: 4%;
+}
+
+.mainlogo img{
+ 
+  width: 50%;
+  height: 50%;
+}
+
+
+.pokemonbtn{
+  background-image: url('./img/ui/pokemonbtn.png');
+  background-repeat: no-repeat;
+  margin-bottom: 2%;
+
+}
+
+
+
+.pokemonbtn:hover{
+  background-image: url('./img/ui/pokemonbtnhover.png');
+
+}
+
+.pcbtn{
+  background-image: url('./img/ui/pcbtn.png');
+  background-repeat: no-repeat;
+}
+
+
+.pcbtn:hover{
+  background-image: url('./img/ui/pcbtnhover.png');
+
+}
+
+.menubuttons button{
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1;
+  color: #d0dcff;
+  width: 25%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  /* background-color: royalblue; */
+  background-color: transparent;
+  background-size: contain;
+  border: none;
+
+}
+
+
+/* POKEMON LIST */
+
+.listbg{
+  background-color: red;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  margin-top: 5%;
+}
+
+
+.cardparent{
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-evenly;
+
+}
+
+
+.cards img{
+  height: 70%; 
+  width: 70%; 
+  max-width: 80%; 
+
+
+}
+
+.cards img:hover{
+  cursor: pointer;
+
+}
+
+.item4{
+  flex-basis: 25%;
+  margin-bottom: 2%;
+  background-color: #282c34;
+  border-style: solid;
+  border-width: 1x 1px 1px 1px;
+  border-color: white;
+
+
+}
+
+.pokename h2{
+  color: red
+}
+.pokename h3{
+  color: red
+}
+
+
