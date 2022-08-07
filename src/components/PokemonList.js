@@ -2,11 +2,17 @@ import React from 'react'
 import { useEffect,useState } from 'react'
 import PokeItem from './PokeItem'
 import axios from 'axios'
-import titleimg from '../img/bgday.png'
+import bgday from '../img/bgday.png'
+import bgnight from '../img/bgnight.png'
+import bgtwilight from '../img/bgtwilight.png'
+import {  useContext } from 'react';
+import { bgContext } from '../App';
 
 
 
-function PokemonList() {
+const PokemonList = (props)=> {
+    
+ const imgid = useContext(bgContext)
     const [pokes, setpokes] = useState([])
     const [nav, setnav] = useState({nextURL: '', prevURL: ''})
     const [page, setpage] = useState(0)
@@ -74,18 +80,26 @@ const cap = (string) => {
 
   return (
     <div>
-        <img src={titleimg} className="titleimg"/>  
+      {
+       {
+        '0' : <img src={bgday} className="titleimg"/>  ,
+        '1' : <img src={bgtwilight} className="titleimg"/>,
+        '2' : <img src={bgnight} className="titleimg"/>,
+       }[imgid]
+
+} 
         <div className='listtitle'>List of Pokemon</div>
 
 
 
     
 <div className='listbg'>
-    <div>No. {fromtill.from} - {fromtill.till}</div>
+   
 
         <div className= "cards col">
-
+        <div className='showing'><h2>Showing No. {fromtill.from} - {fromtill.till}</h2></div>
         <div className="cardparent row">
+        
                             
                 {
                     pokes.map(

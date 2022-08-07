@@ -152,7 +152,6 @@ height:35%;
 /* POKEMON LIST */
 
 .listbg{
-  background-color: red;
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 10%;
@@ -162,11 +161,17 @@ height:35%;
 
 .cardparent{
 
+  background-color: rgba(224, 224, 222,0.8);
+   padding: 5%;
+   margin-top: -5%;
+
   display: flex;
   flex-flow: row wrap;
   justify-content:space-evenly;
 
 }
+
+
 
 
 .cards img{
@@ -192,6 +197,8 @@ height:35%;
 
 
 }
+
+
 
 .pokename h2{
   color: red

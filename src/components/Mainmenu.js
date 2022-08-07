@@ -5,39 +5,21 @@ import {Link} from 'react-router-dom'
 import bgday from '../img/bgday.png'
 import bgnight from '../img/bgnight.png'
 import bgtwilight from '../img/bgtwilight.png'
-import { useEffect, useState } from 'react';
+import {  useContext } from 'react';
+import { bgContext } from '../App';
 
 
 
 
 
-export const bgContext = React.createContext(); 
+
 
 const Mainmenu = (props) => {
 
-const [img, setimg] = useState(0)
+const imgid = useContext(bgContext)
 
-useEffect(() => {
-  
-getbg()
 
-}, [])
 
-const getbg= () =>{
- var hour = new Date().getHours()
- console.log(hour)
- if (hour > 18 || hour < 5) {
-    setimg(2) 
-    return
-}
-if (hour > 16) {
-    setimg(1) 
-    console.log(img)
-    return
-}
-setimg(0)
-
-}
 
     return(
 <div>
@@ -46,7 +28,7 @@ setimg(0)
         '0' : <img src={bgday} className="titleimg"/>  ,
         '1' : <img src={bgtwilight} className="titleimg"/>,
         '2' : <img src={bgnight} className="titleimg"/>,
-       }[img]
+       }[imgid]
 
 }
 <div className="mainlogo"> 
@@ -58,7 +40,7 @@ setimg(0)
 
 
   <div className= "column centerize downtocenter">
-<bgContext.Provider value={img}>
+
     <Link to='/pokemonlist' style={{ textDecoration: 'none' }}>               
      <div className="row menubuttons">
     <button className="pokemonbtn" ></button>
@@ -71,7 +53,7 @@ setimg(0)
      <button className="pcbtn"></button>
      </div>
     </Link>   
-</bgContext.Provider>                 
+         
                       
   </div>
 
