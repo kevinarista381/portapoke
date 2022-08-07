@@ -53,9 +53,42 @@
 
 }
 
-.battleback{
+.battleday{
   
-  background-image: url(img/battleback.png);
+  background-image: url(img/battlebackday.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-width: 100%;
+  min-height:100%;
+  margin-left: 25%;
+  padding: 15%;
+}
+
+.battleday{
+  
+  background-image: url(img/battlebackday.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-width: 100%;
+  min-height:100%;
+  margin-left: 25%;
+  padding: 15%;
+}
+
+.battlenight{
+  
+  background-image: url(img/battlebacknight.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-width: 100%;
+  min-height:100%;
+  margin-left: 25%;
+  padding: 15%;
+}
+
+.battletwi{
+  
+  background-image: url(img/battlebacktwi.png);
   background-repeat: no-repeat;
   background-size: contain;
   min-width: 100%;
@@ -151,6 +184,11 @@ height:35%;
 
 /* POKEMON LIST */
 
+.listtitle{
+  margin-top: 3%;
+
+}
+
 .listbg{
   margin-left: 10%;
   margin-right: 10%;
@@ -163,8 +201,9 @@ height:35%;
 
   background-color: rgba(224, 224, 222,0.8);
    padding: 5%;
-   margin-top: -5%;
-
+   margin-top: -10%;
+   padding-top: 12%;
+   padding-bottom: 10%;
   display: flex;
   flex-flow: row wrap;
   justify-content:space-evenly;
@@ -198,13 +237,95 @@ height:35%;
 
 }
 
+.navlisttop{
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.navlisttop button{
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1;
+  color: #d0dcff;
+  width: 18%;
+  /* background-color: royalblue; */
+  background-color: transparent;
+  background-size: contain;
+  border: none;
+
+}
+
+.navlistbot{
+  display: flex;
+  justify-content: space-around;
+  margin-top: -8%;
+
+}
+
+
+.navlistbot button{
+  font-size: 20px;
+  z-index: 1;
+  color: #d0dcff;
+  width: 18%;
+  /* background-color: royalblue; */
+  background-color: transparent;
+  background-size: contain;
+  border: none;
+
+}
+
+
+
+
+.nextbtn{
+  cursor: pointer;
+  margin-top: 1%;
+  background-image: url('./img/ui/nextbtn.png');
+  background-repeat: no-repeat;
+
+
+}
+
+.nextbtn:disabled{
+  cursor: context-menu !important ;
+  margin-top: 1%;
+  background-image: url('./img/ui/nextdisabled.png');
+  background-repeat: no-repeat;
+}
+
+
+.prevbtn{
+  cursor: pointer;
+  margin-top: 1%;
+  background-image: url('./img/ui/prevbtn.png');
+  background-repeat: no-repeat;
+
+
+}
+.prevbtn:disabled{
+  cursor: context-menu !important ;
+  margin-top: 1%;
+  background-image: url('./img/ui/prevdisabled.png');
+  background-repeat: no-repeat;
+
+
+}
+
+
+
+
+
+
+
 
 
 .pokename h2{
-  color: red
+  color: #ffcd00;
 }
 .pokename h3{
-  color: red
+  color: #ffcd00;
 }
 
 

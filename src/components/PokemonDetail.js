@@ -3,7 +3,7 @@ import { useState, useEffect, useContext} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import axios from 'axios'
 import Poketext from './Poketext'
-import { myPokemonContext } from '../App'
+import { bgContext} from '../App'
 
 const PokemonDetail = () => {
   const {pokeid} = useParams()
@@ -14,12 +14,15 @@ const PokemonDetail = () => {
   const [pokeimg, setpokeimg] = useState('')
   const [gamestatus, setgamestatus] = useState(0)
   
+  
 
   useEffect(() => {
     loaddata()
  
 
   }, [])
+
+  const imgid = useContext(bgContext)
 
 
 
@@ -83,7 +86,14 @@ const PokemonDetail = () => {
     } 
     </div>
 
-<div className='battleback'></div>
+
+{
+       {
+        '0' : <div className='battleday'></div>  ,
+        '1' : <div className='battletwi'></div> ,
+        '2' : <div className='battlenight'></div> ,
+       }[imgid]
+       } 
 
   <div className='pokesprite'> <img src={pokeimg}/></div>
 

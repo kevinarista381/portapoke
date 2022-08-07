@@ -5,6 +5,7 @@ import axios from 'axios'
 import bgday from '../img/bgday.png'
 import bgnight from '../img/bgnight.png'
 import bgtwilight from '../img/bgtwilight.png'
+import pokelist from'../img/pokelist.png'
 import {  useContext } from 'react';
 import { bgContext } from '../App';
 
@@ -86,9 +87,10 @@ const cap = (string) => {
         '1' : <img src={bgtwilight} className="titleimg"/>,
         '2' : <img src={bgnight} className="titleimg"/>,
        }[imgid]
-
-} 
-        <div className='listtitle'>List of Pokemon</div>
+       } 
+        <div className='listtitle'>
+            <img src={pokelist}/>
+        </div>
 
 
 
@@ -97,7 +99,16 @@ const cap = (string) => {
    
 
         <div className= "cards col">
-        <div className='showing'><h2>Showing No. {fromtill.from} - {fromtill.till}</h2></div>
+        <div className='navlisttop'>
+          
+            <button className='prevbtn' disabled={nav.prevURL === null} onClick={loadprev}/>
+          
+            <div className='showing'><h2>Showing No. {fromtill.from} - {fromtill.till}</h2></div>
+
+        
+            <button className='nextbtn' onClick={loadnext}/>
+         
+        </div>
         <div className="cardparent row">
         
                             
@@ -114,14 +125,15 @@ const cap = (string) => {
          
      
 
-        <div>
+        <div className='navlistbot'>
             
-            <button disabled={nav.prevURL === null} onClick={loadprev}>Previous</button>
+            <button className='prevbtn' disabled={nav.prevURL === null} onClick={loadprev}/>
+            <div className='showing'><h2>Showing No. {fromtill.from} - {fromtill.till}</h2></div>
+            <button className='nextbtn' onClick={loadnext}/>
+            
         </div>
 
-        <div>
-            <button onClick={loadnext}>Next</button>
-        </div>
+       
     </div>
 
 
