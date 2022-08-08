@@ -1,5 +1,8 @@
 import React from 'react'
 import { useState, useEffect, useContext} from 'react'
+import bgday from '../img/bgday.png'
+import bgnight from '../img/bgnight.png'
+import bgtwilight from '../img/bgtwilight.png'
 import {Link, useParams} from 'react-router-dom'
 import axios from 'axios'
 import Poketext from './Poketext'
@@ -73,8 +76,29 @@ const PokemonDetail = () => {
   
 
   return (
-    <div>
-    <div>PokemonDetail</div>
+
+    <div className='detailbg'>
+          {
+      {
+       '0' : <img src={bgday} className="titleimg"/>  ,
+       '1' : <img src={bgtwilight} className="titleimg"/>,
+       '2' : <img src={bgnight} className="titleimg"/>,
+      }[imgid]
+      } 
+
+ 
+
+    <div className='tabs'>
+      <input type='radio' class='tabs-radio' name='tabs-detail' id='tab1' checked/>
+      <label for='tab1' class='tabs-label'><h3>Pokedex</h3></label>
+
+      <input type='radio' class='tabs-radio' name='tabs-detail' id='tab2'/>
+      <label for='tab2' class='tabs-label'><h3>Battle</h3></label>
+    </div>
+
+
+
+
     <div>#{pokeid} {pokename} </div>
     <div>Type: {poketype[0]} 
   

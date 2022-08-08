@@ -40,6 +40,46 @@
 
 /* POKEMON DETAIL*/
 
+.detailbg{
+  background-color: rgba(224, 224, 222,0.8);
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  margin-top: 5%;
+}
+
+.tabs{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: left;
+  max-width: 100%;
+ 
+  border-bottom: 1px solid black;
+}
+
+.tabs-label{
+  cursor: pointer;
+  background-color: #d0dcff;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  z-index: 1;
+
+}
+
+.tabs-radio:checked+.tabs-label{
+  font-weight: bold;
+  background-color: #a0acd2;
+  color: black;
+  border-bottom: 3px solid red;
+}
+
+.tabs-radio{
+  display: none;
+}
+
 .poketext{
   color: #f7f5fa;
   background: #629b9f;

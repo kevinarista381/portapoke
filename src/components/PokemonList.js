@@ -106,7 +106,7 @@ const cap = (string) => {
             <div className='showing'><h2>Showing No. {fromtill.from} - {fromtill.till}</h2></div>
 
         
-            <button className='nextbtn' onClick={loadnext}/>
+            <button className='nextbtn' disabled={nav.nextURL === null} onClick={loadnext}/>
          
         </div>
         <div className="cardparent row">
@@ -129,7 +129,7 @@ const cap = (string) => {
             
             <button className='prevbtn' disabled={nav.prevURL === null} onClick={loadprev}/>
             <div className='showing'><h2>Showing No. {fromtill.from} - {fromtill.till}</h2></div>
-            <button className='nextbtn' onClick={loadnext}/>
+            <button className='nextbtn' disabled={nav.nextURL === null} onClick={loadnext}/>
             
         </div>
 
