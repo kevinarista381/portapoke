@@ -2,7 +2,7 @@ import React from 'react'
 
 const Poketext = (props) => {
   return (
-    <div>
+    <div className='gametext'>
     {
        {
         '0' : `A wild ${props.name} appeared!`,

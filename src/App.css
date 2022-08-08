@@ -92,9 +92,7 @@ background-color: #99d8a0;
 
 }
 
-.stats-parent{
-  padding-left: 14%;
-}
+
 
 .stats-table{
   padding-left: 15%;
@@ -102,7 +100,6 @@ background-color: #99d8a0;
   margin-left: -10%;
 
 
-  padding-left: 0%;
 }
 .baselabel{
   margin-right: -20%;
@@ -110,7 +107,7 @@ background-color: #99d8a0;
 .stats-table table{
 
   table-layout: fixed;
-  margin-left: 35%;
+  margin-left: 12%;
   font-size: larger;
   width: 100%;
   height: 100%;
@@ -297,6 +294,7 @@ background-color: #99d8a0;
 .poketext{
   color: #f7f5fa;
   background: #629b9f;
+  border: 3px solid red;
   font-size: 1.5vw;
   min-width: 30%;
   height: 30%;
@@ -305,6 +303,49 @@ background-color: #99d8a0;
   padding-top: 1%;
   padding-bottom: 4%;
 
+}
+
+.gametext{
+  margin-left: -40%;
+}
+
+.battle-control{
+background-color: #f8f8f8;
+margin-top: -9.9%;
+margin-left: 55%;
+margin-right: 25%;
+padding-bottom: -25%;
+border: 3px solid #706880;
+height: 100%;
+}
+
+
+.battle-control button{
+  z-index: 1;
+  color: #d0dcff;
+  width: 100%;
+  height: 100%;
+  padding: 23.5%;
+  /* background-color: royalblue; */
+  background-color: transparent;
+  background-size: contain;
+  border: none;
+
+}
+
+
+.capturebtn{
+  cursor: pointer;
+  margin-top: 0.5%;
+  background-image: url('./img/ui/catchbtn.png');
+  background-repeat: no-repeat;
+  margin-left: 20%;
+
+}
+
+.capturebtn:disabled{
+  background-image: url('./img/ui/catchdisabled.png');
+  cursor: context-menu !important ; 
 }
 
 .battleday{
@@ -326,6 +367,7 @@ background-color: #99d8a0;
   min-width: 100%;
   min-height:100%;
   margin-left: 25%;
+  margin-top: 5%;
   padding: 15%;
 }
 
@@ -337,6 +379,7 @@ background-color: #99d8a0;
   min-width: 100%;
   min-height:100%;
   margin-left: 25%;
+  margin-top: 5%;
   padding: 15%;
 }
 
@@ -348,6 +391,7 @@ background-color: #99d8a0;
   min-width: 100%;
   min-height:100%;
   margin-left: 25%;
+  margin-top: 5%;
   padding: 15%;
 }
 

@@ -56,10 +56,12 @@ const PokedexPage = (props) => {
   
 
 <div className='stats-parent'>
-<div className='baselabel'> <h2>Base Stats: </h2> </div>
 <div className='stats-table'>
 
     <table border ='1'>
+        <tr>
+            <td colSpan="6"> <h3>Base Stats: </h3></td>
+        </tr>
         <tr>
        
                 <th>HP</th>
@@ -73,7 +75,7 @@ const PokedexPage = (props) => {
         <tr>
             
             {
-                statarr.map( stat => <td>{stat}</td>)
+                statarr.map( stat => <td><b>{stat}</b></td>)
             }
         </tr>
     </table>
