@@ -7,6 +7,8 @@ import {Link, useParams} from 'react-router-dom'
 import axios from 'axios'
 import Poketext from './Poketext'
 import { bgContext} from '../App'
+import BattlePage from './BattlePage'
+import PokedexPage from './PokedexPage'
 
 const PokemonDetail = () => {
   const {pokeid} = useParams()
@@ -15,7 +17,13 @@ const PokemonDetail = () => {
   const [pokename, setpokename] = useState('')
   const [poketype, setpoketype] = useState([])
   const [pokeimg, setpokeimg] = useState('')
-  const [gamestatus, setgamestatus] = useState(0)
+  const [pageid, setpageid] = useState(0)
+  const [dexdata, setdexdata] = useState({})
+  const [namearr, setnamearr] = useState([])
+  const [genusarr, setgenusarr] = useState([])
+  const [statarr, setstatarr] = useState([])
+
+
   
   
 
@@ -29,34 +37,7 @@ const PokemonDetail = () => {
 
 
 
-  const handleCapture = () =>{
-  
-    let rng = Math.floor(Math.random() * 2)
-    console.log(rng)
-    switch(rng){
-      case 1 : {
-        setgamestatus(3)
-        if (localStorage.getItem("party") === null){
-          localStorage.setItem("party", JSON.stringify([]))
-        }
-       var currparty = JSON.parse(localStorage.getItem("party"))
-       var newparty = currparty.concat({name: pokename, dexnum : pokeid})
-      console.log(newparty)
-       localStorage.setItem("party", JSON.stringify(newparty))
-      
-      }
-      break;
-      case 0 : {
-        setgamestatus(2) 
-      }
-
-
-
-    }
-    
-
-
-  }
+ 
 
   const cap = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -64,13 +45,41 @@ const PokemonDetail = () => {
 
   const loaddata = async () =>{
     const res = await axios({method: 'get', url: `https://pokeapi.co/api/v2/pokemon/${pokeid}`, headers: {"Access-Control-Allow-Origin": "*"} })
-    const {name, types, sprites} = res.data 
+    const dexres = await axios({method: 'get', url: `${res.data.species.url}`, headers: {"Access-Control-Allow-Origin": "*"} })
+    const {name, types, sprites, stats} = res.data 
+
+    
+    setdexdata(dexres.data)
     setpokename(cap(name))
     setpokeimg(sprites.front_default)
+
         types.forEach((type, i) => {
          poketype[i] = cap(type.type.name)  
       });
-    console.log(res.data)
+
+        stats.forEach((stat, i) => {
+         statarr[i] = stat.base_stat  
+      });
+        
+      
+
+const x= dexres.data.names
+
+      x.forEach((n, i) => {
+        namearr[i] = n.name  
+     });
+
+const y= dexres.data.genera
+
+      y.forEach((g, i) => {
+        genusarr[i] = g.genus  
+     });
+
+      
+
+      console.log(res.data)
+
+   
 
   }
   
@@ -89,46 +98,22 @@ const PokemonDetail = () => {
  
 
     <div className='tabs'>
-      <input type='radio' class='tabs-radio' name='tabs-detail' id='tab1' checked/>
+      <input type='radio' class='tabs-radio tabs-default' name='tabs-detail' id='tab1' onClick={() =>setpageid(0)} checked= {pageid === 0}  />
       <label for='tab1' class='tabs-label'><h3>Pokedex</h3></label>
 
-      <input type='radio' class='tabs-radio' name='tabs-detail' id='tab2'/>
+      <input type='radio' class='tabs-radio' name='tabs-detail' onClick={() =>setpageid(1)} id='tab2'/>
       <label for='tab2' class='tabs-label'><h3>Battle</h3></label>
     </div>
 
-
-
-
-    <div>#{pokeid} {pokename} </div>
-    <div>Type: {poketype[0]} 
-  
-    {
-      (poketype.length > 1) ?
-      `/${poketype[1]}`
-      :
-      null
-    } 
-    </div>
-
-
 {
-       {
-        '0' : <div className='battleday'></div>  ,
-        '1' : <div className='battletwi'></div> ,
-        '2' : <div className='battlenight'></div> ,
-       }[imgid]
-       } 
-
-  <div className='pokesprite'> <img src={pokeimg}/></div>
+      {
+       '0' : <PokedexPage pokename= {pokename} poketype= {poketype} pokeimg = {pokeimg} dexdata = {dexdata} namearr={namearr} genusarr={genusarr} statarr= {statarr}/> ,
+       '1' : <BattlePage pokeid={pokeid} imgid ={imgid} pokeimg = {pokeimg} pokename = {pokename} />,
+      }[pageid]
+} 
 
 
-    <div className='poketext'>
-    <Poketext status= {gamestatus} name= {pokename}/>
-    </div>
-
-    <div>
-      <button onClick={() =>handleCapture()}>Capture</button>
-    </div>
+  
 
 
 

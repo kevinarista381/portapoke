@@ -46,6 +46,8 @@
   margin-right: 10%;
   margin-bottom: 10%;
   margin-top: 5%;
+
+  padding-bottom: 20%;
 }
 
 .tabs{
@@ -76,9 +78,221 @@
   border-bottom: 3px solid red;
 }
 
+
 .tabs-radio{
   display: none;
 }
+
+/* POKEDEX */
+.name-parent{
+max-width: 35%;
+margin-left: 31%;
+margin-top: 3% ;
+background-color: #99d8a0;
+
+}
+
+.stats-parent{
+  padding-left: 14%;
+}
+
+.stats-table{
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-left: -10%;
+
+
+  padding-left: 0%;
+}
+.baselabel{
+  margin-right: -20%;
+}
+.stats-table table{
+
+  table-layout: fixed;
+  margin-left: 35%;
+  font-size: larger;
+  width: 100%;
+  height: 100%;
+
+}
+
+.stats-table td{
+  background-color: rgb(232, 240, 244);
+}
+
+.stats-table th:nth-child(1){
+  background-color: rgb(195, 238, 196);
+}
+
+.stats-table th:nth-child(2){
+  background-color: rgb(238, 213, 195);
+}
+
+.stats-table th:nth-child(3){
+  background-color: rgb(195, 224, 238);
+}
+
+.stats-table th:nth-child(4){
+  background-color: rgb(231, 195, 238);
+}
+
+.stats-table th:nth-child(5){
+  background-color: rgb(203, 204, 199);
+}
+
+.stats-table th:nth-child(6){
+  background-color: rgb(237, 238, 195);
+}
+
+
+
+
+
+.name-first-line{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.name-second-line{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.name-second-line div{
+  margin-top: -5%;
+}
+
+
+.dexbg{
+  background-image: url(img/ui/dexbg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 100%;
+  max-height:100%;
+  margin-left: 31%;
+  padding: 13.2%;
+
+
+}
+
+.dexsprite{
+ margin-top: -26%;
+ margin-left: 32%;
+ margin-bottom: 2%;
+ width:35%;
+ height:35%;
+
+}
+
+.dexsprite img{
+ width: 75%;
+ height:75%;
+}
+
+
+.stats-parent{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: left;
+  margin-left: 18%;
+  margin-right: 20%;
+
+}
+
+/* TYPES */
+
+
+.type-parent{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: left;
+  margin-left: 18%;
+  margin-right: 20%;
+
+
+}
+
+.type-parent h2{
+  margin-top: 1%;
+}
+
+.firsttype{
+  
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: -20%;
+
+  padding: 9%;
+}
+
+.secondtype{
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  margin-left: -20%;
+
+  padding: 9%;
+}
+
+
+.Normal{
+  background-image: url(img/ui/types/normal.png);
+}
+.Fire{
+  background-image: url(img/ui/types/fire.png);
+}
+.Flying{
+  background-image: url(img/ui/types/flying.png);
+}
+.Poison{
+  background-image: url(img/ui/types/poison.png);
+}
+.Ground{
+  background-image: url(img/ui/types/ground.png);
+}
+.Rock{
+  background-image: url(img/ui/types/rock.png);
+}
+.Bug{
+  background-image: url(img/ui/types/bug.png);
+}
+.Ghost{
+  background-image: url(img/ui/types/ghost.png);
+}
+.Steel{
+  background-image: url(img/ui/types/steel.png);
+}
+.Fighting{
+  background-image: url(img/ui/types/fighting.png);
+}
+.Water{
+  background-image: url(img/ui/types/water.png);
+}
+.Grass{
+  background-image: url(img/ui/types/grass.png);
+}
+.Electric{
+  background-image: url(img/ui/types/electric.png);
+}
+.Psychic{
+  background-image: url(img/ui/types/psychic.png);
+}
+.Ice{
+  background-image: url(img/ui/types/ice.png);
+}
+.Dragon{
+  background-image: url(img/ui/types/dragon.png);
+}
+.Dark{
+  background-image: url(img/ui/types/dark.png);
+}
+.Fairy{
+  background-image: url(img/ui/types/fairy.png);
+}
+
+/* BATTLE */
 
 .poketext{
   color: #f7f5fa;
