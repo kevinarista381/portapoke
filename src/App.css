@@ -40,12 +40,42 @@
 
 /* POKEMON DETAIL*/
 
+.backpokemonbtn{
+  display: flex;
+}
+
+.backpokemonbtn button{
+  width: 100%;
+  height: 100%;
+  padding: 4%;
+  background-color: transparent;
+  background-size: contain;
+  border: none;
+
+}
+
+.backpoke{
+  cursor: pointer;
+  margin-top: 0.5%;
+  background-image: url('./img/ui/pokemonbtn-square.png');
+  background-repeat: no-repeat;
+  margin-left: 1%;
+  margin-top: 1%;
+
+}
+
+.detailtitle{
+  margin-top: -8%;
+
+}
+
+
 .detailbg{
   background-color: rgba(224, 224, 222,0.8);
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 10%;
-  margin-top: 5%;
+  margin-top: 1%;
 
   padding-bottom: 20%;
 }
@@ -347,16 +377,7 @@ height: 100%;
   cursor: context-menu !important ; 
 }
 
-.battleday{
-  
-  background-image: url(img/battlebackday.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  min-width: 100%;
-  min-height:100%;
-  margin-left: 25%;
-  padding: 15%;
-}
+
 
 .battleday{
   
@@ -366,7 +387,7 @@ height: 100%;
   min-width: 100%;
   min-height:100%;
   margin-left: 25%;
-  margin-top: 5%;
+  margin-top: 1%;
   padding: 15%;
 }
 
@@ -378,7 +399,7 @@ height: 100%;
   min-width: 100%;
   min-height:100%;
   margin-left: 25%;
-  margin-top: 5%;
+  margin-top: 1%;
   padding: 15%;
 }
 
@@ -390,7 +411,7 @@ height: 100%;
   min-width: 100%;
   min-height:100%;
   margin-left: 25%;
-  margin-top: 5%;
+  margin-top: 1%;
   padding: 15%;
 }
 
@@ -481,8 +502,33 @@ height:35%;
 
 /* POKEMON LIST */
 
+
+.homebtn{
+  display: flex;
+}
+
+.homebtn button{
+  width: 100%;
+  height: 100%;
+  padding: 4%;
+  background-color: transparent;
+  background-size: contain;
+  border: none;
+
+}
+
+.home{
+  cursor: pointer;
+  margin-top: 0.5%;
+  background-image: url('./img/ui/homebtn.png');
+  background-repeat: no-repeat;
+  margin-left: 1%;
+  margin-top: 1%;
+
+}
+
 .listtitle{
-  margin-top: 3%;
+  margin-top: -8%;
 
 }
 
@@ -643,8 +689,6 @@ height:35%;
   z-index: 1;
 }
 
-
-
 .modal-control{
   display: flex;
   margin-top: 2%;
@@ -698,6 +742,11 @@ margin-left: 35%;
   width: 40%;
   height: 40%;
 }
+
+
+
+
+
 
 
 

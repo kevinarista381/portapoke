@@ -8,16 +8,18 @@ import bgtwilight from '../img/bgtwilight.png'
 import pokelist from'../img/pokelist.png'
 import {  useContext } from 'react';
 import { bgContext } from '../App';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const PokemonList = (props)=> {
     
- const imgid = useContext(bgContext)
+    const imgid = useContext(bgContext)
     const [pokes, setpokes] = useState([])
     const [nav, setnav] = useState({nextURL: '', prevURL: ''})
     const [page, setpage] = useState(0)
     const [fromtill, setfromtill] = useState({from: 0 , till: 0})
+    const navi = useNavigate();
     
     useEffect(() => {
     loadinit()
@@ -27,6 +29,10 @@ const PokemonList = (props)=> {
 const cap = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+
+const handlehome = () =>{
+  navi('/')
+}
 
 
   const getdexnum = (str) => {
@@ -88,6 +94,11 @@ const cap = (string) => {
         '2' : <img src={bgnight} className="titleimg"/>,
        }[imgid]
        } 
+       
+       <div className='homebtn'>  
+       <button className='home' onClick={handlehome}></button>
+       </div>
+
         <div className='listtitle'>
             <img src={pokelist}/>
         </div>

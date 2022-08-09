@@ -5,10 +5,11 @@ import bgnight from '../img/bgnight.png'
 import bgtwilight from '../img/bgtwilight.png'
 import {Link, useParams} from 'react-router-dom'
 import axios from 'axios'
-import Poketext from './Poketext'
+import detailtitle from '../img/pokedetail.png'
 import { bgContext} from '../App'
 import BattlePage from './BattlePage'
 import PokedexPage from './PokedexPage'
+import { useNavigate } from 'react-router-dom';
 
 const PokemonDetail = () => {
   const {pokeid} = useParams()
@@ -22,6 +23,7 @@ const PokemonDetail = () => {
   const [namearr, setnamearr] = useState([])
   const [genusarr, setgenusarr] = useState([])
   const [statarr, setstatarr] = useState([])
+  const navi = useNavigate();
 
 
   
@@ -38,11 +40,16 @@ const PokemonDetail = () => {
 
 
 
+  const handlepoke = () =>{
+    navi('/pokemonlist')
+  }
  
 
   const cap = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+
+  
 
   const loaddata = async () =>{
     const res = await axios({method: 'get', url: `https://pokeapi.co/api/v2/pokemon/${pokeid}`, headers: {"Access-Control-Allow-Origin": "*"} })
@@ -86,6 +93,14 @@ const y= dexres.data.genera
   
 
   return (
+  <div>
+     <div className='backpokemonbtn'>  
+       <button className='backpoke' onClick={handlepoke}></button>
+       </div>
+
+        <div className='detailtitle'>
+            <img src={detailtitle}/>
+        </div>
 
     <div className='detailbg'>
           {
@@ -95,6 +110,8 @@ const y= dexres.data.genera
        '2' : <img src={bgnight} className="titleimg"/>,
       }[imgid]
       } 
+
+      
 
  
 
@@ -121,7 +138,7 @@ const y= dexres.data.genera
 
     </div>
 
-    
+   </div> 
   )
 }
 
