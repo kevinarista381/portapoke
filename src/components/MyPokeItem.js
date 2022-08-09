@@ -36,7 +36,7 @@ const handlesummary = () => {
         <div className= "row-sm-6">
         <img onClick={handlesummary} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.dexnum}.png`}/>
   
-        {/* <button onClick={() => handledelete()}>Release Pokemon</button> */}
+    
        </div>
      
 
