@@ -29,6 +29,7 @@ const PokemonDetail = () => {
 
   useEffect(() => {
     loaddata()
+    window.scrollTo({ top: 0, behavior: 'smooth' });
  
 
   }, [])

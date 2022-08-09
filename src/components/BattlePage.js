@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import Modal from './Modal'
 import Poketext from './Poketext'
 import catch1 from '../img/catch-frame1.png'
 import catch2 from '../img/catch-frame2.png'
@@ -13,6 +14,7 @@ const BattlePage = (props) => {
     const {pokeid, pokeimg, imgid, pokename} = props
     const [iscatching, setiscatching] = useState(false)
     const [frames, setframes] = useState(1)
+    const [showmodal, setshowmodal] = useState(false)
 
 
 
@@ -78,6 +80,10 @@ const BattlePage = (props) => {
             setgamestatus(3)
             animatecaught()
             savepokemon()
+            setTimeout(() => {
+             setshowmodal(true)
+            }, 1000);
+            
           
           }
           break;
@@ -93,7 +99,7 @@ const BattlePage = (props) => {
           }   
     
         }
-      }, 1500);
+      }, 1200);
       
 
       
@@ -141,8 +147,15 @@ const BattlePage = (props) => {
     </div>
 
     <div className='battle-control'>
-      <button onClick={handleCapture} disabled= {gamestatus === 3} className='capturebtn'></button>
+      <button onClick={handleCapture} disabled= {gamestatus === 3 || iscatching} className='capturebtn'></button>
     </div>
+
+{
+  showmodal?
+    <Modal pokename = {pokename} setshowmodal = {setshowmodal} pokeimg = {pokeimg}/>
+    :
+    null
+}
    
   </React.Fragment>
   )

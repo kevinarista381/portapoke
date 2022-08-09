@@ -67,7 +67,7 @@
   padding-right: 5%;
   border-left: 1px solid black;
   border-right: 1px solid black;
-  z-index: 1;
+  
 
 }
 
@@ -326,7 +326,6 @@ height: 100%;
   width: 100%;
   height: 100%;
   padding: 23.5%;
-  /* background-color: royalblue; */
   background-color: transparent;
   background-size: contain;
   border: none;
@@ -339,7 +338,7 @@ height: 100%;
   margin-top: 0.5%;
   background-image: url('./img/ui/catchbtn.png');
   background-repeat: no-repeat;
-  margin-left: 20%;
+  margin-left: 25%;
 
 }
 
@@ -608,16 +607,7 @@ height:35%;
   background-image: url('./img/ui/prevdisabled.png');
   background-repeat: no-repeat;
 
-
 }
-
-
-
-
-
-
-
-
 
 .pokename h2{
   color: #ffcd00;
@@ -625,5 +615,96 @@ height:35%;
 .pokename h3{
   color: #ffcd00;
 }
+
+
+
+/* MODAL */
+.modal{
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 50%;
+  z-index: 0;
+
+}
+
+.modal-content{
+  position: fixed;
+  background-color: rgb(225, 216, 216);
+  border: 4px solid #3f4144;
+  border-radius: 25px;
+  width: 50%;
+  height: 65%;
+  margin-top: 8%;
+  margin-bottom: 0%;
+  margin-left: 25%;
+  z-index: 1;
+}
+
+
+
+.modal-control{
+  display: flex;
+  margin-top: 2%;
+}
+
+.modal-control button{
+  width: 100%;
+  height: 100%;
+  padding: 8%;
+  background-color: transparent;
+  background-size: contain;
+  border: none;
+
+}
+
+.modal-pcbox{
+  cursor: pointer;
+  margin-top: 0.5%;
+  background-image: url('./img/ui/pcbtn-square.png');
+  background-repeat: no-repeat;
+  margin-left: 16%;
+
+}
+
+.modal-close{
+  cursor: pointer;
+  margin-top: 0.5%;
+  background-image: url('./img/ui/closebtn.png');
+  background-repeat: no-repeat;
+  margin-left: 16%;
+
+}
+
+.modal-text{
+  margin-top: 3%;
+  display: flex;
+  align-content: center;
+}
+
+.modal-text h2{
+  margin-left: 10%;
+}
+
+.modal-img{
+margin-top: -3%;
+margin-left: 35%;
+
+}
+
+.modal-img img{
+  width: 40%;
+  height: 40%;
+}
+
+
+
+
+
+
+
+
 
 
