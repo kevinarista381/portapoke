@@ -5,7 +5,7 @@ const Poketext = (props) => {
     <div className='gametext'>
     {
        {
-        '0' : `A wild ${props.name} appeared!`,
+        '0' : props.dexdata.is_legendary || props.dexdata.is_mythical ? `${props.name} appeared!`: `A wild ${props.name} appeared!`,
         '1' : `You threw a Pokeball!`,
         '2' : `Oh no! The Pokemon broke free!`,
         '3' : `Gotcha! ${props.name} was caught!`

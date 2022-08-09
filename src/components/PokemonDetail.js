@@ -85,7 +85,7 @@ const y= dexres.data.genera
 
       
 
-      console.log(res.data)
+      console.log(dexres.data)
 
    
 
@@ -126,7 +126,7 @@ const y= dexres.data.genera
 {
       {
        '0' : <PokedexPage pokename= {pokename} poketype= {poketype} pokeimg = {pokeimg} dexdata = {dexdata} namearr={namearr} genusarr={genusarr} statarr= {statarr}/> ,
-       '1' : <BattlePage pokeid={pokeid} imgid ={imgid} pokeimg = {pokeimg} pokename = {pokename} />,
+       '1' : <BattlePage pokeid={pokeid} imgid ={imgid} pokeimg = {pokeimg} pokename = {pokename} dexdata = {dexdata} />,
       }[pageid]
 } 
 

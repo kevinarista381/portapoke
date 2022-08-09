@@ -11,7 +11,7 @@ import catchcaught from '../img/catch-framecaught.png'
 const BattlePage = (props) => {
 
     const [gamestatus, setgamestatus] = useState(0)
-    const {pokeid, pokeimg, imgid, pokename} = props
+    const {pokeid, pokeimg, imgid, pokename, dexdata} = props
     const [iscatching, setiscatching] = useState(false)
     const [frames, setframes] = useState(1)
     const [showmodal, setshowmodal] = useState(false)
@@ -142,7 +142,7 @@ const BattlePage = (props) => {
 
 
     <div className='poketext'>
-    <Poketext status= {gamestatus} name= {pokename}/>
+    <Poketext status= {gamestatus} name= {pokename} dexdata = {dexdata}/>
     
     </div>
 
