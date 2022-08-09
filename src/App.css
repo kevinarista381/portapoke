@@ -92,7 +92,7 @@
 
 .tabs-label{
   cursor: pointer;
-  background-color: #d0dcff;
+  background-color:  #a0acd2;
   padding-left: 5%;
   padding-right: 5%;
   border-left: 1px solid black;
@@ -103,7 +103,7 @@
 
 .tabs-radio:checked+.tabs-label{
   font-weight: bold;
-  background-color: #a0acd2;
+  background-color: #d0dcff;
   color: black;
   border-bottom: 3px solid red;
 }
@@ -742,6 +742,191 @@ margin-left: 35%;
   width: 40%;
   height: 40%;
 }
+
+
+/* PC BOX */
+
+.pctitle{
+  margin-top: -8%;
+  margin-bottom: 5%;
+}
+
+
+.boxcardparent{
+
+  background-image: url('./img/boxbg.png');
+  background-repeat: repeat;
+  background-size: auto;
+  border-right:  5px solid #67972f;
+  border-bottom: 5px solid #67972f;
+  border-left: 5px solid #e0f8a7;
+  border-top: 5px solid #e0f8a7;
+   margin-left: 20%;
+   margin-right: 20%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-evenly;
+
+
+}
+
+.boxdefault{
+  padding-bottom: 12%;
+
+}
+
+
+
+
+
+
+.boxcards img{
+  height: 50%; 
+  width: 50%; 
+  max-width: 80%; 
+  margin-top: -12%;
+
+
+}
+
+.boxcards img:hover{
+
+  cursor: pointer;
+  margin-top: -15%;
+  margin-bottom: 3%;
+
+}
+
+.itembox{
+  flex-basis: 25%;
+  margin-bottom: 2%;
+  background-color: transparent;
+ 
+
+}
+
+.pokename-card h3{
+  color: #3d3b3b;
+  text-shadow: -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px whitesmoke, 1px 1px 0 whitesmoke;
+}
+
+.boxtop{
+  background-image: url('./img/boxtop.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0.5%;
+  margin-left: 35.5%;
+  margin-bottom: 2%;
+}
+
+.boxtop h3{
+  color: black;
+  text-shadow: -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px whitesmoke, 1px 1px 0 whitesmoke;
+  margin-left: -56%;
+}
+
+
+/* MODAL PC */
+
+
+
+.modal-img-pc{
+  display: flex;
+  align-content: space-around;
+  margin-top: -3%;
+  margin-left: 25%;
+  
+  }
+
+  .modal-pc-text{
+    margin-top: 3%;
+    display: flex;
+    align-content: center;
+  }
+
+  .modal-pc-text h2{
+    margin-left: 30%;
+  }
+  
+  
+  .modal-img-pc h3{
+    margin-left: 10%;
+  }
+  
+.modal-img-pc img{
+    width: 30%;
+    height: 30%;
+  }
+
+
+  .modal-control-pc{
+    display: flex;
+    margin-top: 2%;
+    margin-left: -15%;
+  }
+  
+  .modal-control-pc button{
+    width: 100%;
+    height: 100%;
+    padding: 8%;
+    background-color: transparent;
+    background-size: contain;
+    border: none;
+  
+  }
+
+  .modal-pc-pokedex{
+  cursor: pointer;
+  margin-top: 0.5%;
+  background-image: url('./img/ui/pokedexbtn.png');
+  background-repeat: no-repeat;
+  margin-left: 15%;
+
+  }
+
+  .modal-pc-release{
+  cursor: pointer;
+  margin-top: 0.5%;
+  background-image: url('./img/ui/releasebtn.png');
+  background-repeat: no-repeat;
+  margin-left: 16%;
+
+  }
+
+  .releasetxt{
+    margin-left: 2%;
+    margin-top: 2%;
+  }
+  .redtxt{
+    color: red;
+  }
+
+  .release-control{
+    margin-top: -3%;
+  }
+
+
+  .releasetxt-final{
+    margin-left: 22%;
+    margin-top: 10%;
+  }
+
+
+  .release-control-final{
+    margin-top: 10%;
+    margin-left: 33%;
+  }
+
+.close-final{
+  margin-top: 10%;
+  margin-left: 42%;
+}
+
+
+
+  
+
+
 
 
 

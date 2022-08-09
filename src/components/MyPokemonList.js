@@ -1,14 +1,27 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { myPokemonContext } from '../App'
+import React, { useContext, useState } from 'react'
 import MyPokeItem from './MyPokeItem'
+import bgday from '../img/bgday.png'
+import bgnight from '../img/bgnight.png'
+import bgtwilight from '../img/bgtwilight.png'
+import pctitle from '../img/pcbox.png'
+import { bgContext } from '../App';
+import { useNavigate } from 'react-router-dom';
+
 
 function MyPokemonList() {
 
   var storage = JSON.parse(localStorage.getItem("party")) 
+  const imgid = useContext(bgContext)
+  const navi = useNavigate();
+
 
 
 const reset = () => {
     localStorage.clear()
+}
+
+const handlehome = () =>{
+  navi('/')
 }
 
 
@@ -17,35 +30,61 @@ const reset = () => {
 
   return (
  <div>
-    <div>MyPokemonList </div>
 
-    <div>You have caught {storage != null ? storage.length : null} Pokemon</div>
-    <div>
-    <table border="1">
-    
-                <tr>
-                <th>Dex No.</th>
-                <th>Name</th>
-                    
-                </tr>
+  
+
+    {
+       {
+        '0' : <img src={bgday} className="titleimg"/>  ,
+        '1' : <img src={bgtwilight} className="titleimg"/>,
+        '2' : <img src={bgnight} className="titleimg"/>,
+       }[imgid]
+       } 
+       
+       <div className='homebtn'>  
+       <button className='home' onClick={handlehome}></button>
+       </div>
+
+        <div className='pctitle'>
+             <img src={pctitle}/>
+        </div>
+
+
+
+      <div className='boxtop'>
+        
+        <h3>You have {storage != null ? storage.length  : ' 0 '} Pokemon in total. </h3>
+      
+      </div>
+<div className='boxbg'>
+
+
+        <div className= "boxcards col">
+
+        <div className={`boxcardparent row ${storage != null ?  storage.length <= 4 ? 'boxdefault' : null : 'boxdefault'}`}>
+        
+          {            
+              storage != null ?      
                 
-                {
-                   storage != null ?
-                   storage.map(
-                        (mypoke, index) => <MyPokeItem name ={mypoke.name} dexnum = {mypoke.dexnum} idx= {index} />
+                storage.map(
+                        (mypoke, index) => <MyPokeItem name ={mypoke.name} dexnum = {mypoke.dexnum} idx= {index}/>
                     )
+                
+                :
+                <div></div>
+          }
 
-                    :
-                    <tr>
-                        <td colSpan = "2">You have no Pokemon caught.</td>
-                    </tr>
-                }
-            
-               
-            </table>
+            </div>
+        </div>
+
     </div>
 
-    <div><button onClick={() => reset()}>Release ALL</button></div>
+
+   
+
+    
+{/* <button onClick={reset}>reset</button> */}
+   
 
     
 </div>

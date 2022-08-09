@@ -35,11 +35,11 @@ const handlehome = () =>{
 }
 
 
-  const getdexnum = (str) => {
+const getdexnum = (str) => {
     return str.split('pokemon/').pop().split('/')[0]
   }
 
-    const present = (res) =>{
+const present = (res) =>{
         const items = res.data.results
         setnav({nextURL: res.data.next, prevURL: res.data.previous})    
         items.forEach((item, i) => {
