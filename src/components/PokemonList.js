@@ -43,7 +43,9 @@ const present = (res) =>{
         const items = res.data.results
         setnav({nextURL: res.data.next, prevURL: res.data.previous})    
         items.forEach((item, i) => {
-         pokes[i] = {name: cap(item.name), url : item.url}     
+        
+         pokes[i] = {name: cap(item.name), url : item.url}    
+      
       });
 
       setfromtill({from: getdexnum(pokes[0].url) , till: getdexnum(pokes[pokes.length -1].url) })
@@ -55,20 +57,24 @@ const present = (res) =>{
     const loadinit = async () =>{
       const pg = pagectx.page*20
        const res = await axios({method: 'get', url: `https://pokeapi.co/api/v2/pokemon?offset=${pg}&limit=21`, headers: {"Access-Control-Allow-Origin": "*"} }) 
-       console.log(res.data)
+        // console.log(res.data.results)
        present (res)
            
     }
 
     const loadnext = async () =>{
+      if (nav.nextURL === null || pagectx.page >= 44) return
       pagectx.pagesetter(prevstate => prevstate +1)
+      console.log(pagectx.page)
        
       
        
      }
 
      const loadprev = async () =>{
-      pagectx.pagesetter(prevstate => prevstate - 1)
+      if (nav.prevURL === null && pagectx.page <= 0) return
+      pagectx.pagesetter(prevstate => Math.abs(prevstate - 1))
+
         
       
        
@@ -110,10 +116,10 @@ const present = (res) =>{
           
             <button className='prevbtn' disabled={nav.prevURL === null} onClick={loadprev}/>
           
-            <div className='showing'><h2>Showing No. {fromtill.from} - {fromtill.till}</h2></div>
+            <div className='showing'><h2>Showing No. {fromtill.from} - {fromtill.till >= 898 ? 898: fromtill.till}</h2></div>
 
         
-            <button className='nextbtn' disabled={nav.nextURL === null} onClick={loadnext}/>
+            <button className='nextbtn' disabled={nav.nextURL === null  || pagectx.page == 44} onClick={loadnext}/>
          
         </div>
         <div className="cardparent row">
@@ -121,7 +127,16 @@ const present = (res) =>{
                             
                 {
                     pokes.map(
-                        (poke, index) => <PokeItem name ={poke.name} url = {poke.url} dexnum = {getdexnum(poke.url)} key= {index}/>
+                        (poke, index) => {
+
+                         return getdexnum(poke.url) <= 898?
+                          <PokeItem name ={poke.name} url = {poke.url} dexnum = {getdexnum(poke.url)} key= {index}/>
+                          :
+                          null
+
+                         
+                        } 
+
                     )
                 }
 
@@ -135,8 +150,8 @@ const present = (res) =>{
         <div className='navlistbot'>
             
             <button className='prevbtn' disabled={nav.prevURL === null} onClick={loadprev}/>
-            <div className='showing'><h2>Showing No. {fromtill.from} - {fromtill.till}</h2></div>
-            <button className='nextbtn' disabled={nav.nextURL === null} onClick={loadnext}/>
+            <div className='showing'><h2>Showing No. {fromtill.from} - {fromtill.till >= 898 ? 898: fromtill.till}</h2></div>
+            <button className='nextbtn' disabled={nav.nextURL === null  || pagectx.page == 44} onClick={loadnext}/>
             
         </div>
 
