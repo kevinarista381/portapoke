@@ -40,6 +40,35 @@ const handlepokedex = () => {
 
 }
 
+const enummonth = (m) =>{
+    switch(m){
+        case '01' : return 'January'
+        break;
+        case '02' : return 'February'
+        break;
+        case '03' : return 'March'
+        break;
+        case '04' : return 'April'
+        break;
+        case '05' : return 'May'
+        break;
+        case '06' : return 'June'
+        break;
+        case '07' : return 'July'
+        break;
+        case '08' : return 'August'
+        break;
+        case '09' : return 'September'
+        break;
+        case '10' : return 'October'
+        break;
+        case '11' : return 'November'
+        break;
+        case '12' : return 'December'
+        break;
+    }
+}
+
 
   return ReactDOM.createPortal(
 <React.Fragment>
@@ -100,7 +129,9 @@ releasecommited ?
        
         <div className='modal-img-pc'>
         <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.dexnum}.png`}/>
-        <h3>Caught on: ....... <br/> Capture attempts: .....</h3>
+        <h3>Nature: {props.nature}
+        <br/>Caught on: <a> {`${props.catchdate.d} ${enummonth(props.catchdate.m)} ${props.catchdate.y}`} </a> 
+        <br/> Capture attempts: <a> {props.attempts}</a></h3>
        
         </div>
  

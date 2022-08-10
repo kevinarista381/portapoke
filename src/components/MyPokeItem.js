@@ -6,6 +6,7 @@ const MyPokeItem = (props) => {
 
 
   const [showmodal, setshowmodal] = useState(false)
+  const {idx, dexnum, name, attempts, catchdate, nature} = props
 
 
 
@@ -17,7 +18,7 @@ const handlesummary = () => {
 
   const handlerelease = () =>{
     var currparty = JSON.parse(localStorage.getItem("party"))
-    currparty.splice(props.idx, 1);
+    currparty.splice(idx, 1);
     localStorage.setItem("party", JSON.stringify(currparty))
  
     
@@ -27,14 +28,14 @@ const handlesummary = () => {
   return (
     <React.Fragment>
 
-     <div className= "col itembox" key={props.index}>
+     <div className= "col itembox">
        <div className="row-sm-6 pokename-card">
       
-      <h3 onClick={handlesummary}>{props.name}</h3>
+      <h3 onClick={handlesummary}>{name}</h3>
 
        </div>
         <div className= "row-sm-6">
-        <img onClick={handlesummary} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.dexnum}.png`}/>
+        <img onClick={handlesummary} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexnum}.png`}/>
   
     
        </div>
@@ -44,7 +45,7 @@ const handlesummary = () => {
 
       {
   showmodal?
-    <ModalPC pokename = {props.name} dexnum = {props.dexnum}  setshowmodal = {setshowmodal} handlerelease= {handlerelease}/>
+    <ModalPC pokename = {name} dexnum = {dexnum} attempts = {attempts} nature = {nature} catchdate = {catchdate}   setshowmodal = {setshowmodal} handlerelease= {handlerelease}/>
 
     :
     null

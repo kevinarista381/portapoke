@@ -15,6 +15,7 @@ const BattlePage = (props) => {
     const [iscatching, setiscatching] = useState(false)
     const [frames, setframes] = useState(1)
     const [showmodal, setshowmodal] = useState(false)
+    const [attempts, setattempts] = useState(1)
 
 
 
@@ -23,10 +24,77 @@ const BattlePage = (props) => {
         localStorage.setItem("party", JSON.stringify([]))
       }
      var currparty = JSON.parse(localStorage.getItem("party"))
-     var newparty = currparty.concat({name: pokename, dexnum : pokeid})
+     var newparty = currparty.concat({name: pokename, dexnum : pokeid, attempts: attempts, catchdate : getcapturedate(), nature: getnature()})
     console.log(newparty)
      localStorage.setItem("party", JSON.stringify(newparty))
     }
+
+    const getnature = () =>{
+      let rng = Math.floor(Math.random() * 25)
+      switch(rng){
+        case 0 : return 'Hardy'
+        break;
+        case 1 : return 'Lonely'
+        break;
+        case 2 : return 'Brave'
+        break;
+        case 3 : return 'Adamant'
+        break;
+        case 4 : return 'Naughty'
+        break;
+        case 5 : return 'Bold'
+        break;
+        case 6 : return 'Docile'
+        break;
+        case 7 : return 'Relaxed'
+        break;
+        case 8 : return 'Impish'
+        break;
+        case 9 : return 'Lax'
+        break;
+        case 10 : return 'Timid'
+        break;
+        case 11 : return 'Hasty'
+        break;
+        case 12 : return 'Serious'
+        break;
+        case 13 : return 'Jolly'
+        break;
+        case 14 : return 'Naive'
+        break;
+        case 15 : return 'Modest'
+        break;
+        case 16 : return 'Mild'
+        break;
+        case 17 : return 'Quiet'
+        break;
+        case 18 : return 'Bashful'
+        break;
+        case 19 : return 'Rash'
+        break;
+        case 20 : return 'Calm'
+        break;
+        case 21 : return 'Gentle'
+        break;
+        case 22 : return 'Sassy'
+        break;
+        case 23 : return 'Careful'
+        break;
+        case 24 : return 'Quirky'
+        break;
+
+      }
+
+    }
+
+    const getcapturedate = () =>{
+    let today = new Date();
+    let dd= String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yy = today.getFullYear();
+    return {d:dd , m: mm , y: yy }
+    }
+
 
 
     const animatecatch= () =>{
@@ -66,6 +134,7 @@ const BattlePage = (props) => {
     }
 
     const handleCapture = async () =>{
+      setattempts(prevstate => prevstate +1)
       setgamestatus(1)
       await animatecatch()
       let rng = Math.floor(Math.random() * 2)
