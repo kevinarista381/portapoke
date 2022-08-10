@@ -54,17 +54,17 @@ const present = (res) =>{
     
 
     const loadinit = async () =>{
-      const pg = pagectx.page*20
+      const pg = pagectx.page*21
        const res = await axios({method: 'get', url: `https://pokeapi.co/api/v2/pokemon?offset=${pg}&limit=21`, headers: {"Access-Control-Allow-Origin": "*"} }) 
-        // console.log(res.data.results)
+        console.log(pagectx.page)
        present (res)
            
     }
 
     const loadnext = async () =>{
-      if (nav.nextURL === null || pagectx.page >= 44) return
+      if (nav.nextURL === null || pagectx.page >= 43) return
       pagectx.pagesetter(prevstate => prevstate +1)
-      console.log(pagectx.page)
+ 
        
       
        
@@ -118,7 +118,7 @@ const present = (res) =>{
             <div className='showing'><h2>Showing No. {fromtill.from} - {fromtill.till >= 898 ? 898: fromtill.till}</h2></div>
 
         
-            <button className='nextbtn' disabled={nav.nextURL === null  || pagectx.page == 44} onClick={loadnext}/>
+            <button className='nextbtn' disabled={nav.nextURL === null  || pagectx.page == 43} onClick={loadnext}/>
          
         </div>
         <div className="cardparent row">
@@ -150,7 +150,7 @@ const present = (res) =>{
             
             <button className='prevbtn' disabled={nav.prevURL === null} onClick={loadprev}/>
             <div className='showing'><h2>Showing No. {fromtill.from} - {fromtill.till >= 898 ? 898: fromtill.till}</h2></div>
-            <button className='nextbtn' disabled={nav.nextURL === null  || pagectx.page == 44} onClick={loadnext}/>
+            <button className='nextbtn' disabled={nav.nextURL === null  || pagectx.page == 43} onClick={loadnext}/>
             
         </div>
 

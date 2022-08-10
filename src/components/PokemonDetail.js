@@ -6,7 +6,7 @@ import bgtwilight from '../img/bgtwilight.png'
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
 import detailtitle from '../img/pokedetail.png'
-import { bgContext} from '../App'
+import { bgContext, pageContext} from '../App'
 import BattlePage from './BattlePage'
 import PokedexPage from './PokedexPage'
 import { useNavigate } from 'react-router-dom';
@@ -24,6 +24,7 @@ const PokemonDetail = () => {
   const [genusarr, setgenusarr] = useState([])
   const [statarr, setstatarr] = useState([])
   const navi = useNavigate();
+  const pagectx = useContext(pageContext)
 
 
   
@@ -41,6 +42,9 @@ const PokemonDetail = () => {
 
 
   const handlepoke = () =>{
+    let pvalue = Math.floor(pokeid / 21) 
+    if (pokeid % 21 === 0) pvalue -=1
+    pagectx.pagesetter(pvalue)
     navi('/pokemonlist')
   }
  
