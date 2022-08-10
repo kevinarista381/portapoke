@@ -950,6 +950,33 @@ margin-left: 35%;
 }
 
 
+/* ERROR */
+
+.errorbg{
+  background-color: rgba(224, 224, 222,0.9);
+  padding: 5%;
+  margin: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-bottom: 10%;
+  display: flex;
+  justify-content:space-evenly;
+
+}
+
+.errorbg img{
+  width: 20%;
+  height: 20%;
+  margin-left: 0%;
+}
+
+.errorhome{
+width: 100%;
+  margin-top: -20%;
+  margin-left: 45%;
+}
+
+
 
   
 

@@ -63,19 +63,12 @@ const present = (res) =>{
 
     const loadnext = async () =>{
       if (nav.nextURL === null || pagectx.page >= 43) return
-      pagectx.pagesetter(prevstate => prevstate +1)
- 
-       
-      
-       
+      pagectx.pagesetter(prevstate => prevstate +1)     
      }
 
      const loadprev = async () =>{
       if (nav.prevURL === null && pagectx.page <= 0) return
-      pagectx.pagesetter(prevstate => Math.abs(prevstate - 1))
-
-        
-      
+      pagectx.pagesetter(prevstate => Math.abs(prevstate - 1))      
        
      }
 
