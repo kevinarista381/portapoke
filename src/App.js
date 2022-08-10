@@ -26,7 +26,6 @@ function App() {
     
     const getbg= () =>{
      var hour = new Date().getHours()
-     console.log(hour)
      if (hour > 18 || hour < 5) {
         setimgid(2) 
         return

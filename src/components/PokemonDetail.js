@@ -89,7 +89,6 @@ const y= dexres.data.genera
 
       
 
-      console.log(dexres.data)
 
    
 

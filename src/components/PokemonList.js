@@ -56,7 +56,6 @@ const present = (res) =>{
     const loadinit = async () =>{
       const pg = pagectx.page*21
        const res = await axios({method: 'get', url: `https://pokeapi.co/api/v2/pokemon?offset=${pg}&limit=21`, headers: {"Access-Control-Allow-Origin": "*"} }) 
-        console.log(pagectx.page)
        present (res)
            
     }

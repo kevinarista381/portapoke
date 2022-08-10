@@ -25,7 +25,6 @@ const BattlePage = (props) => {
       }
      var currparty = JSON.parse(localStorage.getItem("party"))
      var newparty = currparty.concat({name: pokename, dexnum : pokeid, attempts: attempts, catchdate : getcapturedate(), nature: getnature()})
-    console.log(newparty)
      localStorage.setItem("party", JSON.stringify(newparty))
     }
 
