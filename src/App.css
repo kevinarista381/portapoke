@@ -69,6 +69,12 @@
 
 }
 
+.detailtitle img{
+  height: 50%;
+  width: 50%;
+
+}
+
 
 .detailbg{
   background-color: rgba(224, 224, 222,0.8);
@@ -79,6 +85,8 @@
 
   padding-bottom: 20%;
 }
+
+
 
 .tabs{
   display: flex;
@@ -237,6 +245,7 @@ background-color: #99d8a0;
   align-content: left;
   margin-left: 18%;
   margin-right: 20%;
+  margin-top: -1%;
 
 
 }
@@ -532,6 +541,12 @@ height:35%;
 
 }
 
+.listtitle img{
+  height: 50%;
+  width: 50%;
+
+}
+
 .listbg{
   margin-left: 10%;
   margin-right: 10%;
@@ -572,7 +587,7 @@ height:35%;
 .item4{
   flex-basis: 25%;
   margin-bottom: 2%;
-  background-color: #282c34;
+  background-color: #2a2e34;
   border-style: solid;
   border-width: 1x 1px 1px 1px;
   border-color: white;
@@ -657,9 +672,11 @@ height:35%;
 
 .pokename h2{
   color: #ffcd00;
+  text-shadow: -1px -1px 0 #356abc, 1px -1px 0 #356abc, -1px 1px #356abc, 1px 1px 0 #356abc;
 }
 .pokename h3{
   color: #ffcd00;
+  text-shadow: -5px -5px 0 #356abc 5px -5px 0 #356abc, -5px 5px #356abc, 5px 5px 0 #356abc;
 }
 
 
@@ -751,6 +768,12 @@ margin-left: 35%;
   margin-bottom: 5%;
 }
 
+.pctitle img{
+  height: 22%;
+  width: 22%;
+
+}
+
 
 .boxcardparent{
 
@@ -819,6 +842,7 @@ margin-left: 35%;
   margin-left: 35.5%;
   margin-bottom: 2%;
 }
+
 
 .boxtop h3{
   color: black;

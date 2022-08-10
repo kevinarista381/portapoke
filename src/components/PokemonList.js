@@ -16,7 +16,6 @@ const PokemonList = (props)=> {
     const imgid = useContext(bgContext)
     const [pokes, setpokes] = useState([])
     const [nav, setnav] = useState({nextURL: '', prevURL: ''})
-    const [page, setpage] = useState(0)
     const [fromtill, setfromtill] = useState({from: 0 , till: 0})
     const navi = useNavigate();
     const pagectx = useContext(pageContext)
