@@ -8,11 +8,13 @@ import Mainmenu from './components/Mainmenu';
 
 
 export const bgContext = React.createContext(); 
+export const pageContext = React.createContext(); 
 
 
 function App() {
 
   const [imgid, setimgid] = useState(0)
+  const [page, setpage] = useState(0)
   
   useEffect(() => {
   
@@ -45,12 +47,14 @@ function App() {
  
 
 <bgContext.Provider value={imgid}>
+<pageContext.Provider value={{pagesetter: setpage, page: page}}>
   <Routes>
   <Route path="/" element = {<Mainmenu/>}/> 
   <Route path="/pokemonlist" element = {<PokemonList />}/> 
    <Route path="/pokemondetail/:pokeid" element = {<PokemonDetail/>}/>
    <Route path="/mypokemon" element = {<MyPokemonList />}/> 
   </Routes>
+</pageContext.Provider>
 </bgContext.Provider>
 
     </div>

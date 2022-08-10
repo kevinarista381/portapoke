@@ -1,13 +1,12 @@
 import React from 'react'
-import { useEffect,useState } from 'react'
+import { useEffect,useState, useContext } from 'react'
 import PokeItem from './PokeItem'
 import axios from 'axios'
 import bgday from '../img/bgday.png'
 import bgnight from '../img/bgnight.png'
 import bgtwilight from '../img/bgtwilight.png'
 import pokelist from'../img/pokelist.png'
-import {  useContext } from 'react';
-import { bgContext } from '../App';
+import { bgContext, pageContext } from '../App';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -20,11 +19,12 @@ const PokemonList = (props)=> {
     const [page, setpage] = useState(0)
     const [fromtill, setfromtill] = useState({from: 0 , till: 0})
     const navi = useNavigate();
+    const pagectx = useContext(pageContext)
     
     useEffect(() => {
     loadinit()
 
-}, [])
+}, [pagectx.page])
 
 const cap = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -53,27 +53,23 @@ const present = (res) =>{
     
 
     const loadinit = async () =>{
-       const res = await axios({method: 'get', url: 'https://pokeapi.co/api/v2/pokemon', headers: {"Access-Control-Allow-Origin": "*"} }) 
+      const pg = pagectx.page*20
+       const res = await axios({method: 'get', url: `https://pokeapi.co/api/v2/pokemon?offset=${pg}&limit=21`, headers: {"Access-Control-Allow-Origin": "*"} }) 
+       console.log(res.data)
        present (res)
            
     }
 
     const loadnext = async () =>{
-        const p = page +1
-        const u = nav.nextURL  
-        const res = await axios({method: 'get', url: u, headers: {"Access-Control-Allow-Origin": "*"} })
-        present(res)
-        setpage(p)
+      pagectx.pagesetter(prevstate => prevstate +1)
+       
       
        
      }
 
      const loadprev = async () =>{
-        const p = page -1
-        const u = nav.prevURL 
-        const res = await axios({method: 'get', url: u, headers: {"Access-Control-Allow-Origin": "*"} })
-        present(res)
-        setpage(p)
+      pagectx.pagesetter(prevstate => prevstate - 1)
+        
       
        
      }

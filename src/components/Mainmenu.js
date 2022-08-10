@@ -1,12 +1,11 @@
 import React from 'react'
-import { CSSTransition } from 'react-transition-group';
 import logo from '../img/logo.png'
 import {Link} from 'react-router-dom'
 import bgday from '../img/bgday.png'
 import bgnight from '../img/bgnight.png'
 import bgtwilight from '../img/bgtwilight.png'
-import {  useContext } from 'react';
-import { bgContext } from '../App';
+import {  useContext, useEffect } from 'react';
+import { bgContext, pageContext } from '../App';
 
 
 
@@ -17,6 +16,13 @@ import { bgContext } from '../App';
 const Mainmenu = (props) => {
 
 const imgid = useContext(bgContext)
+const pagectx = useContext(pageContext)
+
+useEffect(() => {
+  pagectx.pagesetter(0)
+    
+}, [])
+
 
 
 
