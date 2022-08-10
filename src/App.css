@@ -813,13 +813,17 @@ margin-left: 35%;
 
 }
 
-.boxcards img:hover{
+.boxcards img:hover:not(.nojump){
 
   cursor: pointer;
   margin-top: -15%;
   margin-bottom: 3%;
 
 }
+
+.nojump{
+  cursor: pointer;
+} 
 
 .itembox{
   flex-basis: 25%;

@@ -35,7 +35,7 @@ const handlesummary = () => {
 
        </div>
         <div className= "row-sm-6">
-        <img onClick={handlesummary} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexnum}.png`}/>
+        <img className={dexnum == 50 || dexnum == 51 ? 'nojump' : null} onClick={handlesummary} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexnum}.png`}/>
   
     
        </div>
