@@ -13,7 +13,6 @@ test('Catch button is disabled after being clicked', async () => {
   );
   const catchbtn = await screen.getByTestId('catchbtn', { container: 'button' })
   fireEvent.click(catchbtn)
-
  expect(await screen.getByTestId('catchbtn', { container: 'button' })).toBeDisabled()
 
 
