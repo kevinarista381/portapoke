@@ -23,6 +23,7 @@ const PokemonDetail = () => {
   const [namearr, setnamearr] = useState([])
   const [genusarr, setgenusarr] = useState([])
   const [statarr, setstatarr] = useState([])
+  const [abilityarr, setabilityarr] = useState([])
   const navi = useNavigate();
   const pagectx = useContext(pageContext)
 
@@ -58,7 +59,7 @@ const PokemonDetail = () => {
   const loaddata = async () =>{
     const res = await axios({method: 'get', url: `https://pokeapi.co/api/v2/pokemon/${pokeid}`, headers: {"Access-Control-Allow-Origin": "*"} })
     const dexres = await axios({method: 'get', url: `${res.data.species.url}`, headers: {"Access-Control-Allow-Origin": "*"} })
-    const {name, types, sprites, stats} = res.data 
+    const {name, types, sprites, stats, abilities} = res.data 
 
     
     setdexdata(dexres.data)
@@ -72,6 +73,14 @@ const PokemonDetail = () => {
         stats.forEach((stat, i) => {
          statarr[i] = stat.base_stat  
       });
+
+      abilities.forEach((abil, i) => {
+        abilityarr[i] = cap(abil.ability.name)  
+     });
+
+       stats.forEach((stat, i) => {
+        statarr[i] = stat.base_stat  
+     });
         
       
 
@@ -88,7 +97,7 @@ const y= dexres.data.genera
      });
 
       
-
+console.log(abilities)
 
    
 
@@ -128,8 +137,15 @@ const y= dexres.data.genera
 
 {
       {
-       '0' : <PokedexPage pokename= {pokename} poketype= {poketype} pokeimg = {pokeimg} dexdata = {dexdata} namearr={namearr} genusarr={genusarr} statarr= {statarr}/> ,
-       '1' : <BattlePage pokeid={pokeid} imgid ={imgid} pokeimg = {pokeimg} pokename = {pokename} dexdata = {dexdata} />,
+       '0' : <PokedexPage pokename= {pokename} 
+       poketype= {poketype} 
+       pokeimg = {pokeimg} 
+       dexdata = {dexdata} 
+       namearr={namearr} 
+       genusarr={genusarr} 
+       statarr= {statarr} 
+       abilityarr ={abilityarr}/> ,
+       '1' : <BattlePage pokeid={pokeid} imgid ={imgid} pokeimg = {pokeimg} pokename = {pokename} dexdata = {dexdata} abilityarr ={abilityarr} />,
       }[pageid]
 } 
 

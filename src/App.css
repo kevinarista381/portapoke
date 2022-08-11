@@ -238,6 +238,59 @@ background-color: #99d8a0;
 
 }
 
+.ability-parent{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: left;
+  margin-left: 7.5%;
+  margin-right: 30%;
+  margin-top: -5%;
+
+
+
+}
+
+.ability-parent h3{
+  margin-top: 3%;
+  margin-left: -36%;
+}
+
+.ability-wide{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: left;
+  margin-left: 1.5%;
+  margin-right: 2%;
+  margin-top: -5%;
+
+
+}
+
+.ability-wide h3{
+  margin-top: 2%;
+  margin-left: -28%;
+
+}
+
+
+.ability-widest{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: left;
+  margin-left: 11%;
+  margin-right: 0%;
+  margin-top: -5%;
+
+}
+
+.ability-widest h3{
+  margin-top: 2.2%;
+  margin-left: -20%;
+
+}
+
+
+
 /* TYPES */
 
 
@@ -329,6 +382,8 @@ background-color: #99d8a0;
 .Fairy{
   background-image: url(img/ui/types/fairy.png);
 }
+
+
 
 /* BATTLE */
 

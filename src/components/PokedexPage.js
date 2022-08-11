@@ -1,9 +1,8 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
 
 const PokedexPage = (props) => {
 
-    const {dexdata, pokename, poketype, pokeimg, namearr, genusarr, statarr} = props
+    const {dexdata, pokename, poketype, pokeimg, namearr, genusarr, statarr, abilityarr} = props
     const dexformat = (s , width, char) => {
         
         if (s === undefined) return
@@ -52,6 +51,46 @@ const PokedexPage = (props) => {
     :
     null
   } 
+  </div>
+
+  <div className={abilityarr.length == 3 ? 'ability-widest': abilityarr.length > 1 ? 'ability-wide' : 'ability-parent'}>
+    <h2>Ability : </h2>
+    <h3>{abilityarr[0]}
+    {
+        
+    (abilityarr.length > 1) ?
+    
+    
+    ` / ${abilityarr[1]} `
+    
+      
+    :
+   null
+
+    }
+
+{
+           (abilityarr.length == 2) ?
+
+          <i> &#40;Hidden Ability&#41;</i>
+           :
+           null
+        
+         
+
+}
+
+    {
+           (abilityarr.length == 3) ?
+
+          <i> / {abilityarr[2]} &#40;Hidden Ability&#41;</i>
+           :
+           null
+        
+         
+
+    }
+  </h3>
   </div>
   
 

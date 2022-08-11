@@ -6,7 +6,7 @@ const MyPokeItem = (props) => {
 
 
   const [showmodal, setshowmodal] = useState(false)
-  const {idx, dexnum, name, attempts, catchdate, nature} = props
+  const {idx, dexnum, name, attempts, catchdate, nature, ability} = props
 
 
 
@@ -46,7 +46,7 @@ const handlesummary = () => {
       {
   showmodal?
   <div data-testid = 'modalpc'>
-    <ModalPC pokename = {name} dexnum = {dexnum} attempts = {attempts} nature = {nature} catchdate = {catchdate}   setshowmodal = {setshowmodal} handlerelease= {handlerelease}/>
+    <ModalPC pokename = {name} dexnum = {dexnum} attempts = {attempts} nature = {nature} ability= {ability} catchdate = {catchdate}   setshowmodal = {setshowmodal} handlerelease= {handlerelease}/>
     </div>
     :
     null

@@ -130,6 +130,7 @@ releasecommited ?
         <div className='modal-img-pc'>
         <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.dexnum}.png`}/>
         <h3>Nature: {props.nature}
+        <br/>Ability: <a> {props.ability}</a>
         <br/>Caught on: <a> {`${props.catchdate.d} ${enummonth(props.catchdate.m)} ${props.catchdate.y}`} </a> 
         <br/> Capture attempts: <a> {props.attempts}</a></h3>
        

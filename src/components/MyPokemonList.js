@@ -67,7 +67,7 @@ const handlehome = () =>{
               storage != null ?      
                 
                 storage.map(
-                        (mypoke, index) => <MyPokeItem name ={mypoke.name} dexnum = {mypoke.dexnum} idx= {index} attempts= {mypoke.attempts} catchdate = {mypoke.catchdate} nature ={mypoke.nature}/>
+                        (mypoke, index) => <MyPokeItem name ={mypoke.name} dexnum = {mypoke.dexnum} idx= {index} attempts= {mypoke.attempts} catchdate = {mypoke.catchdate} nature ={mypoke.nature} ability= {mypoke.ability}/>
                     )
                 
                 :

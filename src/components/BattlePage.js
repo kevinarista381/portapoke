@@ -11,7 +11,7 @@ import catchcaught from '../img/catch-framecaught.png'
 const BattlePage = (props) => {
 
     const [gamestatus, setgamestatus] = useState(0)
-    const {pokeid, pokeimg, imgid, pokename, dexdata} = props
+    const {pokeid, pokeimg, imgid, pokename, dexdata, abilityarr} = props
     const [iscatching, setiscatching] = useState(false)
     const [frames, setframes] = useState(1)
     const [showmodal, setshowmodal] = useState(false)
@@ -24,8 +24,21 @@ const BattlePage = (props) => {
         localStorage.setItem("party", JSON.stringify([]))
       }
      var currparty = JSON.parse(localStorage.getItem("party"))
-     var newparty = currparty.concat({name: pokename, dexnum : pokeid, attempts: attempts, catchdate : getcapturedate(), nature: getnature()})
+     var newparty = currparty.concat({name: pokename, dexnum : pokeid, attempts: attempts, catchdate : getcapturedate(), nature: getnature(), ability: getabiliy()})
      localStorage.setItem("party", JSON.stringify(newparty))
+    }
+
+    const getabiliy =() => {
+      let rng = Math.floor(Math.random() * abilityarr.length)
+      switch(rng){
+        case 0 : return abilityarr[0]
+        break;
+        case 1 : return abilityarr[1]
+        break;
+        case 2 : return abilityarr[2]
+        break;
+      }
+
     }
 
     const getnature = () =>{
