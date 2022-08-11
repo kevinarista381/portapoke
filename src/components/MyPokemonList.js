@@ -42,7 +42,7 @@ const handlehome = () =>{
        } 
        
        <div className='homebtn'>  
-       <button className='home' onClick={handlehome}></button>
+       <button title='Back to Home Page' className='home' onClick={handlehome}></button>
        </div>
 
         <div className='pctitle'>

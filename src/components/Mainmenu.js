@@ -39,7 +39,7 @@ useEffect(() => {
 }
 <div className="mainlogo"> 
                {/* SHOWING MAIN MENU */}
-<img src={logo}/>
+<img title='Created by Kevin Arista Chandra' src={logo}/>
 </div>
 
              
@@ -49,14 +49,14 @@ useEffect(() => {
 
     <Link to='/pokemonlist' style={{ textDecoration: 'none' }}>               
      <div className="row menubuttons">
-    <button className="pokemonbtn" ></button>
+    <button title='Pokemon List' className="pokemonbtn" ></button>
      </div>
     </Link>
 
 
     <Link to='/mypokemon' style={{ textDecoration: 'none' }}>
      <div className="row menubuttons">
-     <button className="pcbtn"></button>
+     <button title='Pokemon Storage aka My Pokemon List' className="pcbtn"></button>
      </div>
     </Link>   
          

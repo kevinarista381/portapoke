@@ -60,7 +60,6 @@ function App() {
   </Routes>
 </pageContext.Provider>
 </bgContext.Provider>
-
     </div>
 
 

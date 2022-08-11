@@ -90,7 +90,7 @@ releasecommited ?
 <div></div>
 
     <div className='modal-control'>
-        <button className='modal-close close-final' onClick={handleclosefinal}></button>
+        <button title='Close this message' className='modal-close close-final' onClick={handleclosefinal}></button>
     </div>
     </React.Fragment>
 
@@ -115,8 +115,8 @@ releasecommited ?
     
  
         <div className='modal-control release-control'>
-            <button className='modal-pc-release' onClick={commitrelease}></button>
-            <button className='modal-close' onClick={handleclose}></button>
+            <button title='Release / Delete this Pokemon from PC Box' className='modal-pc-release' onClick={commitrelease}></button>
+            <button title='Close this message' className='modal-close' onClick={handleclose}></button>
         </div>
         </React.Fragment>
 
@@ -139,9 +139,9 @@ releasecommited ?
     
  
         <div className='modal-control-pc'>
-            <button className='modal-pc-pokedex' onClick={handlepokedex}></button>
-            <button className='modal-pc-release' onClick={releasesequence}></button>
-            <button className='modal-close' onClick={handleclose}></button>
+            <button title= {`View ${props.pokename}'s Pokedex entry`} className='modal-pc-pokedex' onClick={handlepokedex}></button>
+            <button title='Release / Delete this Pokemon from PC Box' className='modal-pc-release' onClick={releasesequence}></button>
+            <button title='Close this message' className='modal-close' onClick={handleclose}></button>
         </div>
         </React.Fragment>
   }

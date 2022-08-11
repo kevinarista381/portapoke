@@ -88,8 +88,8 @@ const present = (res) =>{
        }[imgid]
        } 
        
-       <div className='homebtn'>  
-       <button className='home' onClick={handlehome}></button>
+       <div className='homebtn' name='home'>  
+       <button title='Back to Home Page' className='home' onClick={handlehome}></button>
        </div>
 
         <div className='listtitle'>
@@ -105,12 +105,12 @@ const present = (res) =>{
         <div className= "cards col">
         <div className='navlisttop'>
           
-            <button className='prevbtn' disabled={nav.prevURL === null} onClick={loadprev}/>
+            <button className='prevbtn' data-testid='prevbtn-top' disabled={nav.prevURL === null || pagectx.page == 0} onClick={loadprev}/>
           
             <div className='showing'><h2>Showing No. {fromtill.from} - {fromtill.till >= 898 ? 898: fromtill.till}</h2></div>
 
         
-            <button className='nextbtn' disabled={nav.nextURL === null  || pagectx.page == 43} onClick={loadnext}/>
+            <button className='nextbtn' data-testid='nextbtn-top' disabled={nav.nextURL === null  || pagectx.page == 42} onClick={loadnext}/>
          
         </div>
         <div className="cardparent row">
@@ -140,9 +140,9 @@ const present = (res) =>{
 
         <div className='navlistbot'>
             
-            <button className='prevbtn' disabled={nav.prevURL === null} onClick={loadprev}/>
+            <button className='prevbtn' data-testid= 'prevbtn-bot' disabled={nav.prevURL === null || pagectx.page == 0} onClick={loadprev}/>
             <div className='showing'><h2>Showing No. {fromtill.from} - {fromtill.till >= 898 ? 898: fromtill.till}</h2></div>
-            <button className='nextbtn' disabled={nav.nextURL === null  || pagectx.page == 43} onClick={loadnext}/>
+            <button className='nextbtn' data-testid= 'nextbtn-bot' disabled={nav.nextURL === null  || pagectx.page == 42} onClick={loadnext}/>
             
         </div>
 

@@ -34,8 +34,8 @@ const handlePC = () => {
         </div>
  
         <div className='modal-control'>
-            <button className='modal-pcbox' onClick={handlePC}></button>
-            <button className='modal-close' onClick={handleclose}></button>
+            <button title='Opens your PC Box' className='modal-pcbox' onClick={handlePC}></button>
+            <button title='Close this message' className='modal-close' onClick={handleclose}></button>
         </div>
 
     </div>

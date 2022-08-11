@@ -3,13 +3,13 @@ import { useState, useEffect, useContext} from 'react'
 import bgday from '../img/bgday.png'
 import bgnight from '../img/bgnight.png'
 import bgtwilight from '../img/bgtwilight.png'
-import {useParams} from 'react-router-dom'
+import {useParams, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import detailtitle from '../img/pokedetail.png'
 import { bgContext, pageContext} from '../App'
 import BattlePage from './BattlePage'
 import PokedexPage from './PokedexPage'
-import { useNavigate } from 'react-router-dom';
+
 
 const PokemonDetail = () => {
   const {pokeid} = useParams()
@@ -98,7 +98,7 @@ const y= dexres.data.genera
   return (
   <div>
      <div className='backpokemonbtn'>  
-       <button className='backpoke' onClick={handlepoke}></button>
+       <button title='Go to Pokemon List' className='backpoke' onClick={handlepoke}></button>
        </div>
 
         <div className='detailtitle'>

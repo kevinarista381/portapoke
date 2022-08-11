@@ -37,11 +37,10 @@ const Error= () => {
         
       </div>
       <div className='homebtn errorhome'>  
-       <button className='home' onClick={handlehome}></button>
+       <button className='home' title= 'home' data-testid = 'homebutton' onClick={handlehome}></button>
        </div>
 
-
-      
+     
 
 
     </div>
