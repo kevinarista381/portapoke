@@ -185,23 +185,21 @@ const BattlePage = (props) => {
        }[imgid]
        } 
 
-  <div className='pokesprite'> 
+  <div data-testid='battle-sprite' className='pokesprite'> 
   {
     iscatching ?
    
     frames === 1 ?
-    <img src={catch1}/>
+    <img data-testid= 'frame1' src={catch1}/>
     :
        frames === 2 ?
-       <img src={catch2}/>
+       <img data-testid= 'frame2' src={catch2}/>
 
        :
        frames === 3 ?
-       <img src={catch3}/>
+       <img data-testid= 'frame3' src={catch3}/>
        :
-       <img src={catchcaught}/>
-
-   
+       <img data-testid= 'framecaught' src={catchcaught}/>
 
     :
     <img src={pokeimg}/>
@@ -215,7 +213,7 @@ const BattlePage = (props) => {
     </div>
 
     <div className='battle-control'>
-      <button onClick={handleCapture} disabled= {gamestatus === 3 || iscatching} className='capturebtn'></button>
+      <button data-testid ='catchbtn' onClick={handleCapture} disabled= {gamestatus === 3 || iscatching} className='capturebtn'></button>
     </div>
 
 {

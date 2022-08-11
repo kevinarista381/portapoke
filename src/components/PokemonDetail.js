@@ -119,11 +119,11 @@ const y= dexres.data.genera
  
 
     <div className='tabs'>
-      <input type='radio' class='tabs-radio tabs-default' name='tabs-detail' id='tab1' onClick={() =>setpageid(0)} checked= {pageid === 0}  />
-      <label for='tab1' class='tabs-label'><h3>Pokedex</h3></label>
+      <input type='radio' className='tabs-radio tabs-default' name='tabs-detail' id='tab1' onClick={() =>setpageid(0)} defaultChecked  />
+      <label htmlFor='tab1' className='tabs-label'><h3>Pokedex</h3></label>
 
-      <input type='radio' class='tabs-radio' name='tabs-detail' onClick={() =>setpageid(1)} id='tab2'/>
-      <label for='tab2' class='tabs-label'><h3>Battle</h3></label>
+      <input type='radio' data-testid='battle-tab' className='tabs-radio' name='tabs-detail' onClick={() =>setpageid(1)} id='tab2'/>
+      <label htmlFor='tab2' className='tabs-label'><h3>Battle</h3></label>
     </div>
 
 {

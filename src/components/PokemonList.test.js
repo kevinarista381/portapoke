@@ -1,25 +1,20 @@
 import { render, screen } from "@testing-library/react";
-
 import {BrowserRouter} from 'react-router-dom'
 import PokemonList from "./PokemonList";
-import {pageContext, bgContext } from "../App"
+import {pageContext} from "../App"
 
 
-let imgid = 0
-const placehold= (x) =>{  
-  page = x
-}
+
+const placehold= jest.fn()
 
 test('both previous buttons are disabled upon initial rendering', async () => {
 let page = 0
 
   render(
 <pageContext.Provider value={{page: page, pagesetter: placehold}}>
-<bgContext.Provider value={imgid}>
 <BrowserRouter>
  <PokemonList/>
 </BrowserRouter>
-</bgContext.Provider>
 </pageContext.Provider>
   
   );
@@ -36,11 +31,9 @@ test('both next buttons are disabled upon hitting page tat contains Pokemon numb
 
   render(
 <pageContext.Provider value={{page: page, pagesetter: placehold}}>
-<bgContext.Provider value={imgid}>
 <BrowserRouter>
  <PokemonList/>
 </BrowserRouter>
-</bgContext.Provider>
 </pageContext.Provider>
   
   );

@@ -13,7 +13,7 @@ test('renders the error text and home button correctly', () => {
   
   );
   expect(screen.getByText(/Oops! Looks like the content you're looking for is not found./i)).toBeInTheDocument();
- screen.getByTestId('homebutton', { container: 'button' })
+ expect(screen.getByTestId('homebutton', { container: 'button' })).toBeInTheDocument();
 //screen.debug()
 })
 

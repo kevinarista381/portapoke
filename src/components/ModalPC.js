@@ -122,7 +122,7 @@ releasecommited ?
 
   :   
     <React.Fragment>
-    <div className='modal-pc-text'>
+    <div  className='modal-pc-text'>
             <h2> {props.pokename}</h2>
             
         </div>
