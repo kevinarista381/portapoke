@@ -83,7 +83,7 @@ const PokedexPage = (props) => {
     {
            (abilityarr.length == 3) ?
 
-          <i> / {abilityarr[2]} &#40;Hidden Ability&#41;</i>
+          <a> / <i>{abilityarr[2]} &#40;Hidden Ability&#41;</i></a>
            :
            null
         

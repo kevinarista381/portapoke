@@ -58,7 +58,18 @@ const PokemonDetail = () => {
 
   const loaddata = async () =>{
     const res = await axios({method: 'get', url: `https://pokeapi.co/api/v2/pokemon/${pokeid}`, headers: {"Access-Control-Allow-Origin": "*"} })
+    .catch(
+      (err) =>{
+        navi('/error')
+      }
+     ) 
     const dexres = await axios({method: 'get', url: `${res.data.species.url}`, headers: {"Access-Control-Allow-Origin": "*"} })
+    .catch(
+      (err) =>{
+        navi('/error')
+      }
+     ) 
+     
     const {name, types, sprites, stats, abilities} = res.data 
 
     

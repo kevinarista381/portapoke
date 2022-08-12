@@ -32,7 +32,7 @@ const Error= () => {
 
       <div className='errorbg'>
         <img src={psyduck}/>
-        <h2>Oops! Looks like the content you're looking for is not found.</h2>
+        <h2>Oops! Looks like the content you're looking for is not available.</h2>
 
         
       </div>
