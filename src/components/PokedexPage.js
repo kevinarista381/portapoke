@@ -54,7 +54,7 @@ const PokedexPage = (props) => {
   </div>
 
   <div className={abilityarr.length == 3 ? 'ability-widest': abilityarr.length > 1 ? 'ability-wide' : 'ability-parent'}>
-    <h2>Ability : </h2>
+    <h2>Ability: </h2>
     <h3>{abilityarr[0]}
     {
         

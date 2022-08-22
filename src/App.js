@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import './App-mobile.css'
 import PokemonList from './components/PokemonList';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import PokemonDetail from './components/PokemonDetail';

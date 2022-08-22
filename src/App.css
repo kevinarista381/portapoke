@@ -38,7 +38,12 @@
 }
 
 
-/* POKEMON DETAIL*/
+
+/* ########### WEB VIEW ################## */
+
+
+@media (width > 500px) {
+  /* POKEMON DETAIL*/
 
 .backpokemonbtn{
   display: flex;
@@ -495,6 +500,8 @@ height:35%;
  width: 55%;
  height:55%;
 }
+
+
 
 /* MAIN MENU */
 .titleimg {
@@ -1036,6 +1043,12 @@ width: 100%;
   margin-top: -20%;
   margin-left: 45%;
 }
+
+
+}
+
+
+
 
 
 

@@ -74,7 +74,7 @@ const enummonth = (m) =>{
 <React.Fragment>
 
     <div className='modal'>
-    <div className='modal-content'>
+    <div className='modal-content modalpc'>
 
   { 
   
@@ -105,8 +105,8 @@ releasecommited ?
             
         </div>
        
-        <div className='modal-img'>
-        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.dexnum}.png`}/>
+        <div className='modal-img '>
+        <img className='releaseimg' src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.dexnum}.png`}/>
 
        
         </div>
