@@ -927,8 +927,9 @@
     background-image: url('./img/boxtop.png');
     background-repeat: no-repeat;
     background-size: contain;
+    width: 100%;
     padding: 0.5%;
-    margin-left: 0.5%;
+    margin-left: 1.5%;
     margin-bottom: 2%;
   }
   
