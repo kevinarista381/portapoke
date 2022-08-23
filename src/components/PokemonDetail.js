@@ -107,10 +107,7 @@ const y= dexres.data.genera
         genusarr[i] = g.genus  
      });
 
-      
-console.log(abilities)
-
-   
+        
 
   }
   
