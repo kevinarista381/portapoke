@@ -1098,6 +1098,23 @@
   
   
   }
+
+
+
+ @media (width > 500px) {
+
+  .boxtop{
+    margin-left: 25%;
+  }
+
+  .boxtop h3{
+
+    margin-left: -50%;
+
+  }
+
+
+  }
   
   
   
