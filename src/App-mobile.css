@@ -3,7 +3,7 @@
 /* ########### MOBILE VIEW ################## */
 
 
-@media (width <= 500px) {
+@media (width <= 1000px) {
     /* POKEMON DETAIL*/
   
   .backpokemonbtn{
